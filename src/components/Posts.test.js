@@ -5,7 +5,8 @@ import Posts from "./Posts";
 
 jest.mock("axios");
 
-test("Fetch makes an API call and ....", async () => {
+test("Posts Component", async () => {
+  // Arrange
   const returnData = [
     {
       author: "John Doe",
