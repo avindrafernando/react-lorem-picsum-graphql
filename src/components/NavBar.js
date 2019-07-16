@@ -164,7 +164,7 @@ const NavBar = () => {
         <div className={classes.drawerHeader} />
         
         <Route exact path="/" component={Home} />
-        <Route path="/posts" component={Posts} />
+        <Route exact path="/posts" component={Posts} />
       </main>
     </div>
   );
