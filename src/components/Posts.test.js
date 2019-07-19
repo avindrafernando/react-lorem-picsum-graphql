@@ -30,14 +30,19 @@ test("Posts Component", async () => {
     }
   ];
 
-  // Act
   axiosMock.get.mockResolvedValueOnce({ data: returnData });
   
-  const {getByTitle, container} = render(<Posts/>);
+  // Act
+  // const {getByTitle, container} = render(<Posts/>);
 
-  const [cardNode1, cardNode2] = await waitForElement(() =>
-    [getByTitle("John Doe"), getByTitle("Jane Doe")]
-  );
+  // const [cardNode1, cardNode2] = await waitForElement(() =>
+  //   [getByTitle("John Doe"), getByTitle("Jane Doe")]
+  // );
+
+  const {findByTitle, container} = render(<Posts/>);
+
+  const cardNode1 = await findByTitle("John Doe");
+  const cardNode2 = await findByTitle("Jane Doe");
 
   // Assert
   expect(axiosMock.get).toHaveBeenCalledTimes(1);

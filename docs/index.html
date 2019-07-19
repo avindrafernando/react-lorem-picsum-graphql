@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+	<html class="sl-root decks export offline loaded">
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<title>Testing Your React Components - KCDC 2019</title>
+
+
+		<link rel="stylesheet" type="text/css" href="lib/offline-v2.css">
+
+
+
+	</head>
+	<body class="reveal-viewport theme-font-montserrat theme-color-white-blue">
+		<div class="reveal">
+			<div class="slides">
+				<section data-id="7a7221acd40ee5be60010152f296a0be"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 238px; height: auto;" data-block-id="0be950855c61b8e8c6e68e001ac13b88"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text">
+<h1>Testing React Components</h1>
+</div></div></section><section data-id="a90788ed54589f5d853aced753f34c7d"><div class="sl-block" data-block-type="image" data-block-id="bda074bcff294e78b701228789a34d10" style="min-width: 4px; min-height: 4px; width: 720px; height: 540px; left: 120px; top: 80px;"><div class="sl-block-content" style="z-index: 11;"><img style="" data-natural-width="720" data-natural-height="540" data-lazy-loaded="" data-src="tes-15/f0441c1c1557e2bf2ad297c650e59da8.png"></div></div></section><section data-id="ac27a12b146577e26be0758f120f5c0a"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 266px; height: auto;" data-block-id="a9a81052a2c1c889fe573e6a715e9bec"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10;">
+<h1>Meet Adam</h1>
+</div></div></section><section data-id="ffb8086e22c4a7600dbb623c55723897" data-background-image="tes-15/2b3c0aa119ab7cd3297739aa826912f0"></section><section data-id="465023f28450cadf654a5118f3b21281"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 140px; height: auto;" data-block-id="5ab03e32f39d55ba06d116e4aefd9678"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 11;">
+<h2>Invest into automated testing, but ...</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 337px; height: auto;" data-block-id="409ab5c9c8dcc95fd9868c2393348cef"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12; line-height: 1.95;" data-has-line-height="">
+<ul>
+	<li class="fragment" data-fragment-index="0">not seeing improved <strong>quality</strong>
+</li>
+	<li class="fragment" data-fragment-index="1">not seeing improved <strong>productivity</strong>
+</li>
+	<li class="fragment" data-fragment-index="2">not seeing improved <strong>user sentiment</strong>
+</li>
+</ul>
+</div></div>
+<div class="sl-block" data-block-type="text" data-block-id="c2f1cef3ee0132f688a065a8a96657c2" style="height: auto; min-width: 30px; min-height: 30px; width: 274px; left: 343px; top: 670px;"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 13; font-size: 35%;">
+<p><span style="font-size:1.0em"><a href="https://medium.com/@timothy.cochran/test-pyramid-the-key-to-good-automated-test-strategy-9f3d7e3c02d5" target="_blank">Test Pyramid: the key to good automated test strategy</a></span></p>
+</div></div></section><section data-id="463fd13e638c82560064e4dd1d692a4a"><div class="sl-block" data-block-type="text" style="width: 806px; left: 78px; top: 92px; height: auto;" data-block-id="b5f7e44c640ce5bfcf71393f9010b6e3"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10;">
+<h1>Who Am I?</h1>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 386px; left: 348px; top: 315px; height: auto;" data-block-id="53e80806ab2ae115d8c27ca7b5f31940"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Subtitle" style="z-index: 11;">
+<h3>@avindrafernando</h3>
+</div></div>
+<div class="sl-block" data-block-type="image" style="width: 119px; height: 119px; left: 229px; top: 280px; min-width: 4px; min-height: 4px;" data-block-id="9c63950b58c441015d7ac8573ad69dbe"><a class="sl-block-content" style="z-index: 12;" href="https://twitter.com/avindrafernando" target="_blank"><img style="" data-natural-width="1280" data-natural-height="1280" data-lazy-loaded="" data-src="tes-15/ed2f8716dbdf5955215a2c1f7ffafe1b.png"></a></div>
+<div class="sl-block" data-block-type="image" style="width: 69px; height: 69px; left: 254px; top: 394px; min-width: 4px; min-height: 4px;" data-block-id="bf0900c2cb9174dc0506ced4cb6a8dc5"><a class="sl-block-content" style="z-index: 13;" href="https://medium.com/@avindra1" target="_blank"><img data-natural-width="195" data-natural-height="195" style="" data-lazy-loaded="" data-src="tes-15/cb272a02f021906dabf97685844104d7.png"></a></div>
+<div class="sl-block" data-block-type="text" style="width: 232px; left: 348px; top: 404px; height: auto;" data-block-id="23240ab981552a8f595090661b3f7793"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Subtitle" style="z-index: 14;">
+<h3>@avindra1</h3>
+</div></div>
+<div class="sl-block" data-block-type="image" style="width: 77px; height: 77px; left: 246px; top: 484px; min-width: 4px; min-height: 4px;" data-block-id="42f5442a5068c3fc2f10e32abd947fa4"><a class="sl-block-content" style="z-index: 15;" href="https://github.com/avindrafernando" target="_blank"><img style="" data-natural-width="1280" data-natural-height="1280" data-lazy-loaded="" data-src="tes-15/4a52bc7ba0cb349e47ec409288a8f80e.png"></a></div>
+<div class="sl-block" data-block-type="text" style="width: 370px; left: 348px; top: 497px; height: auto;" data-block-id="af7056e7f26404b3abfafbefc6d7454b"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Subtitle" style="z-index: 16;">
+<h3>avindrafernando</h3>
+</div></div></section><section data-id="7ecce2a3e79efd651f2227ff87238360"><div class="sl-block" data-block-type="text" style="width: 960px; left: 0px; top: 47px; height: auto;" data-block-id="1523473ee8ba19abf7061eb628d5bb7d"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10; font-size: 96%;">
+<h1>Testing Ice Cream Cone 🍦</h1>
+</div></div>
+<div class="sl-block" data-block-type="image" data-block-id="03550b1700f12b781da87e7ca6920d31" style="min-width: 4px; min-height: 4px; width: 499px; height: 463px; left: 231px; top: 167px;"><div class="sl-block-content" style="z-index: 11;"><img style="" data-natural-width="1456" data-natural-height="1350" data-lazy-loaded="" data-src="tes-15/302f70b93f616629401095cc694a0f97.png"></div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 274px; left: 344px; top: 670px;" data-block-id="09e03d6d2b0d8595598c346cfd8bb028"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 13; font-size: 35%;">
+<p><span style="font-size:1.0em"><a href="https://medium.com/@timothy.cochran/test-pyramid-the-key-to-good-automated-test-strategy-9f3d7e3c02d5" target="_blank">Test Pyramid: the key to good automated test strategy</a></span></p>
+</div></div></section><section data-id="0ae4f5c8bed632212b8e7312dd7638ab"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 43px; height: auto;" data-block-id="9d6153a61e1d3880c02380df763ff939"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10;">
+<h1>Testing Hour Glass⏳</h1>
+</div></div>
+<div class="sl-block" data-block-type="image" style="width: 548px; height: 454px; left: 206px; top: 176px; min-width: 4px; min-height: 4px;" data-block-id="0b12b103d0e4229ccd109fe9a7950596"><div class="sl-block-content" style="z-index: 11;"><img style="" data-natural-width="1548" data-natural-height="1282" data-lazy-loaded="" data-src="tes-15/9694eac7bfd3f46892e2bdcbff98950a.png"></div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 274px; left: 343px; top: 670px;" data-block-id="5aac7aa0c13d291afd59da0e8a89b8ec"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 13; font-size: 35%;">
+<p><span style="font-size:1.0em"><a href="https://medium.com/@timothy.cochran/test-pyramid-the-key-to-good-automated-test-strategy-9f3d7e3c02d5" target="_blank">Test Pyramid: the key to good automated test strategy</a></span></p>
+</div></div></section><section data-id="1b104df6d4dd3a782e994b1262232b23"><div class="sl-block" data-block-type="image" data-block-id="52f968b8a8d4fc0171c1ca326a3bb85e" style="min-width: 4px; min-height: 4px; width: 444px; height: 444px; left: 258px; top: 128px;"><div class="sl-block-content" style="z-index: 11;"><img style="" data-natural-width="444" data-natural-height="444" data-lazy-loaded="" data-src="tes-15/0eb74ab2baaad41287c48c92a634efe5.gif"></div></div></section><section data-id="988da3dd8e37078a393987d15cc8c3d1"><div class="sl-block" data-block-type="image" data-block-id="35d20fde421eac04e7102d739298f95b" style="min-width: 4px; min-height: 4px; width: 806px; height: 346px; left: 77px; top: 177px;"><div class="sl-block-content" style="z-index: 10;"><img data-natural-width="1600" data-natural-height="686" style="" data-lazy-loaded="" data-src="tes-15/0adf026fa08300ac39ee5ca80c2cf8f5.png"></div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 274px; left: 343px; top: 670px;" data-block-id="c4cc7baa350d79dc80399ad7a22a5149"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12; font-size: 35%;">
+<p><span style="font-size:1.0em"><a href="https://medium.com/@timothy.cochran/test-pyramid-the-key-to-good-automated-test-strategy-9f3d7e3c02d5" target="_blank">Test Pyramid: the key to good automated test strategy</a></span></p>
+</div></div></section><section data-id="556f7568de59f4199e46a7773a5f369a"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 266px; height: auto;" data-block-id="8cf0b981062340f677cfac07e28ef6e0"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10;">
+<h1>Say hello to...</h1>
+</div></div></section><section data-id="4c1786ad7d3f0697d424ca089878999d"><div class="sl-block" data-block-type="text" style="width: 883px; left: 39px; top: 43px; height: auto;" data-block-id="cfc275b461039f3e9210656f5f25aed1"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10;">
+<h1>The Testing Pyramid 🔺</h1>
+</div></div>
+<div class="sl-block" data-block-type="image" data-block-id="426db581ffd5eab19d323f82324d29ac" style="min-width: 4px; min-height: 4px; width: 624px; height: 460px; left: 168px; top: 170px;"><div class="sl-block-content" style="z-index: 11;"><img data-natural-width="1451" data-natural-height="1069" style="" data-lazy-loaded="" data-src="tes-15/ea479529809a266481f60ef950dcce97.png"></div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 274px; left: 345px; top: 670px;" data-block-id="f5d0c480640cb4e932aab69a39372b0a"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 13; font-size: 35%;">
+<p><span style="font-size:1.0em"><a href="https://medium.com/@timothy.cochran/test-pyramid-the-key-to-good-automated-test-strategy-9f3d7e3c02d5" target="_blank">Test Pyramid: the key to good automated test strategy</a></span></p>
+</div></div></section><section data-id="3872d44e6bc5a8557a35abca2f68355f"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 205px; height: auto;" data-block-id="c010ad3d20e210eef178dfa16338d666"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 11;" dir="ui">
+<h1>But, isn't Unit Testing going to slow us down?</h1>
+</div></div></section><section data-id="aec9799f61486daff48afc3d25f47df6"><div class="sl-block" data-block-type="image" data-block-id="4729991b1f16717b4bd9ad278682f68e" style="min-width: 4px; min-height: 4px; width: 535px; height: 525px; left: 213px; top: 88px;"><div class="sl-block-content" style="z-index: 11;"><img data-natural-width="417" data-natural-height="409" style="" data-lazy-loaded="" data-src="tes-15/b6938a13ba4a7983db818bf9869e5fb3.jpg"></div></div></section><section data-id="5710f014d594efee23147e68198a5002"><div class="sl-block" data-block-type="text" style="width: 413px; left: 29px; top: 84px; height: auto;" data-block-id="f1f8a72fe1080a6a34b3953b5bcb96fa"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="text-align: left; z-index: 11;">
+<h2>Conflict Points</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 413px; left: 29px; top: 304px; height: auto;" data-block-id="1eb74cc7ca33e81479e2834c7826b46e"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nec metus justo. Aliquam erat volutpat." style="z-index: 13; text-align: left;">
+<ul>
+	<li class="visible">Conventional Diamond
+	<ul>
+		<li class="fragment" data-fragment-index="0">26 conflict points</li>
+	</ul>
+	</li>
+	<li class="visible">DCD
+	<ul>
+		<li class="fragment" data-fragment-index="1">14 conflict points</li>
+	</ul>
+	</li>
+</ul>
+</div></div>
+<div class="sl-block" data-block-type="image" style="width: 371px; height: 428px; left: 520px; top: 136px; min-width: 4px; min-height: 4px;" data-block-id="70f1782fe434d4e395dfebb34ac99186"><div class="sl-block-content" style="z-index: 12;"><img data-natural-width="371" data-natural-height="428" style="" data-lazy-loaded="" data-src="tes-15/cbe97ee16208dc1d68a4a5e9e070db5e.gif"></div></div></section><section data-id="a0f50e820cc8032404b2e6b52d1f472d"><div class="sl-block" data-block-type="image" data-block-id="fb3bc7e55e8532cc15f9136e3e2c9d80" style="min-width: 4px; min-height: 4px; width: 960px; height: 685px; left: 0px; top: 8px;"><div class="sl-block-content" style="z-index: 11;"><img data-natural-width="1892" data-natural-height="1350" style="" data-lazy-loaded="" data-src="tes-15/81547bd0a35558f0eb8658d80c3331ab.png"></div></div></section><section data-id="642e7dc7718024e482bf58eab995ea74"><div class="sl-block" data-block-type="text" data-block-id="3e460404b6f3c32f72028103b17de1dc" style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: 180px; top: 162px;"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
+<h1>Welcome, Jest </h1>
+</div></div>
+<div class="sl-block" data-block-type="image" data-block-id="f65eb2d40cf0531a77ef345cd46d3ccd" style="min-width: 4px; min-height: 4px; width: 264px; height: 264px; left: 348px; top: 358px;"><div class="sl-block-content" style="z-index: 12;"><img data-natural-width="600" data-natural-height="600" style="" data-lazy-loaded="" data-src="tes-15/9dd3505e13facb931fc4157d59fb3a95.png"></div></div></section><section data-id="c01766fd4b57b7355465b22bbead1c61" data-background-iframe="https://jestjs.io/" data-background-interactive="true" data-preload=""></section><section data-id="a63ad1a48ced08d5ed10d651bf1e3755"><div class="sl-block" data-block-type="image" data-block-id="8d408c14e9cc31f2dc0c836e5f6bffb2" style="min-width: 4px; min-height: 4px; width: 971px; height: 420px; left: -5px; top: 140px;"><div class="sl-block-content" style="z-index: 11;"><img style="" data-natural-width="2500" data-natural-height="1081" data-lazy-loaded="" data-src="tes-15/757ea376967f557c4a422c7986f85472.png"></div></div>
+<div class="sl-block" data-block-type="shape" data-block-id="7e3cc2db65a69d9de02785dc3fc2e31e" style="min-width: 4px; min-height: 4px; width: 118px; height: 366px; left: 30px; top: 184px;"><div class="sl-block-content fragment" data-shape-type="rect" data-shape-fill-color="rgba(0, 0, 0, 0)" data-shape-stretch="true" style="z-index: 12;" data-shape-stroke-color="#ff9900" data-shape-stroke-width="5px" data-fragment-index="0"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveaspectratio="none" viewbox="0 0 118 366"><defs><clippath id="shape-mask-1-1562881743410"><rect width="118" height="366" rx="0" ry="0"></rect></clippath></defs><rect width="118" height="366" rx="0" ry="0" clip-path="url(#shape-mask-1-1562881743410)" class="shape-element" fill="rgba(0, 0, 0, 0)" stroke="#ff9900" stroke-width="10"></rect></svg></div></div></section><section data-id="48a303d82bf448fdcc465585f8580658">
+<div class="sl-block" data-block-type="code" data-block-id="56abeed3aa270a91c51589a8b7f2cd96" style="min-width: 30px; min-height: 30px; width: 960px; height: 231px; left: 0px; top: 235px;"><div class="sl-block-content notranslate" data-highlight-theme="github-gist" data-code-frame="none" style="z-index: 10; font-size: 200%;"><pre class="javascript"><code data-line-numbers="">const sum = require('./sum');
+
+test('adds 1 + 2 to equal 3', () =&gt; {
+  expect(sum(1, 2)).toBe(3);
+});</code></pre></div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 274px; left: 343px; top: 670px;" data-block-id="c9829353387c4aff174cc5111201f2bc"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12; font-size: 35%;">
+<p><a href="https://jestjs.io/docs/en/getting-started" target="_blank"><span style="font-size:1.0em">Jest: Getting Started</span></a></p>
+</div></div></section><section data-id="38510cf58ff3fbed5976b570a652c5e8"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 70px; height: auto;" data-block-id="de82d07b01fc528dd36147f61289fbe9"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10;">
+<h1>Async Requests???</h1>
+</div></div>
+<div class="sl-block" data-block-type="image" data-block-id="eee90e8638911ce9c017d7cc57b664f8" style="min-width: 4px; min-height: 4px; width: 284px; height: 284px; left: 338px; top: 210px;"><div class="sl-block-content" style="z-index: 12;"><img style="" data-natural-width="1080" data-natural-height="1080" data-lazy-loaded="" data-src="tes-15/234e2679966106b4abd2bfb970f75475.gif"></div></div>
+<div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 560px; height: auto;" data-block-id="eb60b4b3bf07a7a50b654b53120f534b"><div class="sl-block-content fragment" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 13;" data-fragment-index="0">
+<h1>No Problem...</h1>
+</div></div></section><section data-id="6412db34c53033d1afad2757eed12a35">
+<div class="sl-block" data-block-type="code" data-block-id="c52d28af1a9e44b0ddb35809f78646ea" style="min-width: 30px; min-height: 30px; width: 960px; height: 297px; left: 0px; top: 202px;"><div class="sl-block-content notranslate has-copy-button" data-highlight-theme="github-gist" data-code-frame="none" style="z-index: 10; font-size: 200%;">
+<pre class="javascript"><code class="hljs" data-line-numbers="">// user.js
+import request from './request';
+
+export function getUserName(userID) {
+  return request('/users/' + userID)
+   .then(user =&gt; user.name);
+}</code></pre>
+<button class="copy-code-to-clipboard" data-code-to-copy="// user.js
+import request from './request';
+
+export function getUserName(userID) {
+  return request('/users/' + userID)
+   .then(user =&gt; user.name);
+}">Copy</button>
+</div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 274px; left: 343px; top: 670px;" data-block-id="c0a6064bd1f91742c0d8c1de048cddac"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12; font-size: 35%;">
+<p><a href="https://jestjs.io/docs/en/tutorial-async" target="_blank"><span style="font-size:1.0em">Jest: An Async Example</span></a></p>
+</div></div></section><section data-id="e59378ee92eb42fd41eea449df489562">
+<div class="sl-block" data-block-type="code" style="width: 960px; height: 496px; left: 0px; top: 102px;" data-block-id="410db1187d6710be6e6d0e37b4e540c7"><div class="sl-block-content notranslate" data-highlight-theme="github-gist" data-code-frame="none" style="z-index: 10; font-size: 175%;"><pre class="javascript"><code data-line-numbers="">// request.js
+const http = require('http');
+
+export default function request(url) {
+  return new Promise(resolve =&gt; {
+    // This module is being mocked in 
+    // __mocks__/request.js
+    http.get({path: url}, response =&gt; {
+      let data = '';
+      response.on('data', _data =&gt; (data += _data));
+      response.on('end', () =&gt; resolve(data));
+    });
+  });
+}</code></pre></div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 274px; left: 343px; top: 670px;" data-block-id="dfdb437d3c645e0946060a9349f6ae9a"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12; font-size: 35%;">
+<p><a href="https://jestjs.io/docs/en/tutorial-async" target="_blank"><span style="font-size:1.0em">Jest: An Async Example</span></a></p>
+</div></div></section><section data-id="c65b98919cb0d35b4a4d5ccb544abd62"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 266px; height: auto;" data-block-id="e72b5a2e481960669ef3bec2c13fa31d"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10;">
+<h1>Let's mock it</h1>
+</div></div></section><section data-id="e229509c0b04178f8901816d94cd3d3e">
+<div class="sl-block" data-block-type="code" style="width: 960px; height: 607px; left: 0px; top: 47px;" data-block-id="9cb65537b35ff5217f03b3dafa0ca68d"><div class="sl-block-content notranslate" data-highlight-theme="github-gist" data-code-frame="none" style="z-index: 10; font-size: 159%;"><pre class="javascript"><code data-line-numbers="|2-5">// __mocks__/request.js
+const users = {
+  4: {name: 'Mark'},
+  5: {name: 'Paul'},
+};
+
+export default function request(url) {
+  return new Promise((resolve, reject) =&gt; {
+    const userID = 
+     parseInt(url.substr('/users/'.length), 10);
+    process.nextTick(() =&gt;
+      users[userID]
+        ? resolve(users[userID])
+        : reject({
+            error: 'User with ' + userID + ' not found.',
+          }),
+    );
+  });
+}</code></pre></div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 274px; left: 343px; top: 670px;" data-block-id="6d0d5d0bd534c9f58be63d7f23d0a0ab"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12; font-size: 35%;">
+<p><a href="https://jestjs.io/docs/en/tutorial-async" target="_blank"><span style="font-size:1.0em">Jest: An Async Example</span></a></p>
+</div></div></section><section data-id="33a6728206934f71f2560b27cc213c2a"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 266px; height: auto;" data-block-id="1feac95635dd31fd4c830cf39cdab967"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10;">
+<h1>Let's test it</h1>
+</div></div></section><section data-id="49f5405464df8e8176ea3a01c46ddb83">
+<div class="sl-block" data-block-type="code" style="width: 960px; height: 421px; left: 0px; top: 139px;" data-block-id="e56d8a184de881eab3f8c3b9cf77a420"><div class="sl-block-content notranslate" data-highlight-theme="github-gist" data-code-frame="none" style="z-index: 11; font-size: 185%;"><pre class="javascript"><code data-line-numbers="|2|9-10">// __tests__/user-test.js
+jest.mock('../request');
+
+import * as user from '../user';
+
+// The assertion for a promise must be returned.
+it('works with promises', () =&gt; {
+  expect.assertions(1);
+  return user.getUserName(4)
+    .then(data =&gt; expect(data).toEqual('Mark'));
+});</code></pre></div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 274px; left: 343px; top: 670px;" data-block-id="2de305f1a623e09ec3d1120830c48579"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 13; font-size: 35%;">
+<p><a href="https://jestjs.io/docs/en/tutorial-async" target="_blank"><span style="font-size:1.0em">Jest: An Async Example</span></a></p>
+</div></div></section><section data-id="de26d9c160a48c6a1ebf86d6824da585"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 43px; height: auto;" data-block-id="5ab492a7f6c8bf607fd0c718f9168c8c"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10;">
+<h1>Using resolves</h1>
+</div></div>
+<div class="sl-block" data-block-type="code" style="width: 960px; height: 214px; left: 0px; top: 280px;" data-block-id="0fba8bfc8893ea10c690eedd7cf6164e"><div class="sl-block-content notranslate" data-highlight-theme="github-gist" data-code-frame="none" style="z-index: 11; font-size: 200%;"><pre class="javascript"><code data-line-numbers="|3-4">it('works with resolves', () =&gt; {
+  expect.assertions(1);
+  return expect(user.getUserName(5))
+   .resolves.toEqual('Paul');
+});
+</code></pre></div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 274px; left: 343px; top: 670px;" data-block-id="9400601f30f2ccb23e379ff1a165f665"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 13; font-size: 35%;">
+<p><a href="https://jestjs.io/docs/en/tutorial-async" target="_blank"><span style="font-size:1.0em">Jest: An Async Example</span></a></p>
+</div></div></section><section data-id="e378105b8015e8920d10a40058a8e6cc"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 43px; height: auto;" data-block-id="6dde6a80951a3877f56ee284afa45e4d"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10;">
+<h1>Using async/await</h1>
+</div></div>
+<div class="sl-block" data-block-type="code" style="width: 960px; height: 226px; left: 0px; top: 194px;" data-block-id="4e321a382cf44741e6388057c552fb4b"><div class="sl-block-content notranslate" data-highlight-theme="github-gist" data-code-frame="none" style="z-index: 11; font-size: 164%;"><pre class="javascript"><code data-line-numbers="">// async/await can be used.
+it('works with async/await', async () =&gt; {
+  expect.assertions(1);
+  const data = await user.getUserName(4);
+  expect(data).toEqual('Mark');
+});</code></pre></div></div>
+<div class="sl-block" data-block-type="code" data-block-id="ecf8d4f634c322167ecb2a40e33148ce" style="min-width: 30px; min-height: 30px; width: 960px; height: 205px; left: 0px; top: 420px;"><div class="sl-block-content notranslate fragment" data-highlight-theme="github-gist" data-code-frame="none" style="z-index: 12; font-size: 164%;" data-fragment-index="0"><pre class="javascript"><code data-line-numbers="">// async/await can also be used with `.resolves`.
+it('works with async/await and resolves', async () =&gt; {
+  expect.assertions(1);
+  await expect(user.getUserName(5))
+   .resolves.toEqual('Paul');
+});</code></pre></div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 274px; left: 343px; top: 670px;" data-block-id="c07984f960b796cf85e55091ad7cbd0e"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 14; font-size: 35%;">
+<p><a href="https://jestjs.io/docs/en/tutorial-async" target="_blank"><span style="font-size:1.0em">Jest: An Async Example</span></a></p>
+</div></div></section><section data-id="eb20ca5eb31220f5e1a32be2211894cd"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 70px; height: auto;" data-block-id="e7c795150c1768348530a43cf6c006d9"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 11;">
+<h1>Snapshot Testing</h1>
+</div></div>
+<div class="sl-block" data-block-type="image" data-block-id="4fbf652b71b34136573b3222c4b19566" style="min-width: 4px; min-height: 4px; width: 624px; height: 416px; left: 168px; top: 212px;"><div class="sl-block-content" style="z-index: 12;"><img data-natural-width="1920" data-natural-height="1280" style="" data-lazy-loaded="" data-src="tes-15/bb3b45a0acc76db1ec712eec908f95fb"></div></div></section><section data-id="98f8ec8b2f773476dffd2ed81f92c8b9">
+<div class="sl-block" data-block-type="code" data-block-id="5f6ab86575e647ec34332d9871459c9b" style="min-width: 30px; min-height: 30px; width: 960px; height: 287px; left: -1px; top: 207px;"><div class="sl-block-content notranslate" data-highlight-theme="github-gist" data-code-frame="none" style="z-index: 10; font-size: 141%;"><pre class="javascript"><code data-line-numbers="">import React from 'react';
+import Link from '../Link.react';
+import renderer from 'react-test-renderer';
+
+it('renders correctly', () =&gt; {
+  const tree = renderer
+    .create(&lt;Link page="http://www.facebook.com"&gt;Facebook&lt;/Link&gt;)
+    .toJSON();
+  expect(tree).toMatchSnapshot();
+});</code></pre></div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 274px; left: 343px; top: 670px;" data-block-id="617da6d9efb5376e49d6043a406d7ae0"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12; font-size: 35%;">
+<p><a href="https://jestjs.io/docs/en/snapshot-testing" target="_blank"><span style="font-size:1.0em">Jest: Snapshot Testing</span></a></p>
+</div></div></section><section data-id="2f6d06a6f66bf75ad70dc7f94ac136ae">
+<div class="sl-block" data-block-type="code" style="width: 960px; height: 410px; left: 0px; top: 145px;" data-block-id="d2ce9ac2a4bd9bf08f635e350e141bea"><div class="sl-block-content notranslate" data-highlight-theme="github-gist" data-code-frame="none" style="z-index: 10; font-size: 200%;"><pre class="javascript"><code data-line-numbers="">exports[`renders correctly 1`] = `
+&lt;a
+  className="normal"
+  href="http://www.facebook.com"
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+&gt;
+  Facebook
+&lt;/a&gt;
+`;</code></pre></div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 274px; left: 344px; top: 670px;" data-block-id="a669fe46db0886f2f893168b9f23c010"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12; font-size: 35%;">
+<p><a href="https://jestjs.io/docs/en/snapshot-testing" target="_blank"><span style="font-size:1.0em">Jest: Snapshot Testing</span></a></p>
+</div></div></section><section data-id="1b78f1c26cbc3ff9360d559fbe900890">
+<div class="sl-block" data-block-type="code" style="width: 960px; height: 208px; left: 0px; top: 190px;" data-block-id="9c2dcb03476a0c39a29f28f26e614b06"><div class="sl-block-content notranslate" data-highlight-theme="github-gist" data-code-frame="none" style="z-index: 10; font-size: 140%;"><pre class="javascript"><code data-line-numbers="4" data-fragment-index="0">// Updated test case with a Link to a different address
+it('renders correctly', () =&gt; {
+  const tree = renderer
+    .create(&lt;Link page="http://www.instagram.com"&gt;Instagram&lt;/Link&gt;)
+    .toJSON();
+  expect(tree).toMatchSnapshot();
+});</code></pre></div></div>
+<div class="sl-block" data-block-type="code" data-block-id="2be8011e405c7f19259bdd15c9448e3c" style="min-width: 30px; min-height: 30px; width: 960px; height: 53px; left: 0px; top: 540px;"><div class="sl-block-content notranslate fragment" data-highlight-theme="github-gist" data-code-frame="none" style="z-index: 12; font-size: 200%;" data-fragment-index="0"><pre class="javascript"><code data-line-numbers="">jest --updateSnapshot</code></pre></div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 274px; left: 343px; top: 670px;" data-block-id="97f76709362532547ad107bdd9ece3c8"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 13; font-size: 35%;">
+<p><a href="https://jestjs.io/docs/en/snapshot-testing" target="_blank"><span style="font-size:1.0em">Jest: Snapshot Testing</span></a></p>
+</div></div></section><section data-id="c1b358f70ea151debabc12738e3407d8">
+<div class="sl-block" data-block-type="text" data-block-id="0d68333d890b1fb373fcd7ef42ea06e3" style="height: auto; min-width: 30px; min-height: 30px; width: 960px; left: 0px; top: 269px;"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 10;">
+<blockquote>
+<p><span style="font-size:1.4em"><span style="color:rgb(36, 41, 46); text-align:left">The aim of snapshot testing is not to replace existing unit tests, but to provide additional value and make testing painless.</span></span></p>
+</blockquote>
+</div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 274px; left: 343px; top: 670px;" data-block-id="4cbd3f2502d7fa0be8c287a7f0b9092a"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12; font-size: 35%;">
+<p><a href="https://jestjs.io/docs/en/snapshot-testing" target="_blank"><span style="font-size:1.0em">Jest: Snapshot Testing</span></a></p>
+</div></div></section><section data-id="cc19083a43715f920e86d34e3b871fa1"><div class="sl-block" data-block-type="image" data-block-id="6147ddc2980bf22507d18918c2b8ffdf" style="min-width: 4px; min-height: 4px; width: 960px; height: 643px; left: 0px; top: 29px;"><div class="sl-block-content" style="z-index: 10;"><img data-natural-width="858" data-natural-height="575" style="" data-lazy-loaded="" data-src="tes-15/f12ac7aad700fdb4ce642aed3f9fa89c.gif"></div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 274px; left: 343px; top: 678px;" data-block-id="60dafd105a7f21635534a393f83323d3"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12; font-size: 35%;">
+<p><a href="https://facebook.github.io/create-react-app/docs/running-tests" target="_blank"><span style="font-size:1.0em">Running Tests - React Docs</span></a></p>
+</div></div></section><section data-id="503bb833379dda27441a82e53ec146fe"><div class="sl-block" data-block-type="text" style="width: 806px; left: 74px; top: 70px; height: auto;" data-block-id="8f1a8ea7eaf5acca45b9bdd18e055535"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10;">
+<h1>Testing Components</h1>
+</div></div>
+<div class="sl-block" data-block-type="image" data-block-id="cd53135bf3cbbf2da0295c6b6f9924a7" style="min-width: 4px; min-height: 4px; width: 260px; height: 384px; left: 0px; top: 210px;"><div class="sl-block-content fragment" style="z-index: 11;" data-fragment-index="0"><img style="" data-natural-width="1920" data-natural-height="2833" data-lazy-loaded="" data-src="tes-15/a41f95f34e7dca2543c7284b494f9c80"></div></div>
+<div class="sl-block" data-block-type="text" data-block-id="3ff612e7ed066c33d49967220472966c" style="height: auto; min-width: 30px; min-height: 30px; width: 211px; left: 25px; top: 622px;"><div class="sl-block-content fragment" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12; font-size: 125%;" data-fragment-index="0">
+<p>Smoke Test</p>
+</div></div>
+<div class="sl-block" data-block-type="image" data-block-id="2b3ebb2b3e057293e31e2c5df9869f76" style="min-width: 4px; min-height: 4px; width: 255px; height: 382px; left: 353px; top: 211px;"><div class="sl-block-content fragment" style="z-index: 13;" data-fragment-index="1"><img style="" data-natural-width="1920" data-natural-height="2880" data-lazy-loaded="" data-src="tes-15/df895c917feee9995b750929c0e15f10"></div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 320px; left: 320px; top: 604px;" data-block-id="26a5263a5fcefe534c6ecb69fe5e95cc"><div class="sl-block-content fragment" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 14; font-size: 125%;" data-fragment-index="1">
+<p>Shallow Rendering</p>
+</div></div>
+<div class="sl-block" data-block-type="image" data-block-id="c1cbacce626cb8175ec0d017801765b7" style="min-width: 4px; min-height: 4px; width: 254px; height: 382px; left: 706px; top: 210px;"><div class="sl-block-content fragment" style="z-index: 16;" data-fragment-index="2"><img style="" data-natural-width="1920" data-natural-height="2882" data-lazy-loaded="" data-src="tes-15/168f94eb16ef95521a4116e391a6b3a4"></div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 254px; left: 706px; top: 622px;" data-block-id="0f413e1d7c9ad1118dfa200bd19914b9"><div class="sl-block-content fragment" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 17; font-size: 125%;" data-fragment-index="2">
+<p>Full Rendering</p>
+</div></div></section><section data-id="8539b5c93096f3c3b4f61d5993c7717e"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 92px; height: auto;" data-block-id="f3affb8420171a7f7433542fcda61650"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10;">
+<h1>Smoke Test</h1>
+</div></div>
+<div class="sl-block" data-block-type="code" data-block-id="e453f8f00dcd9ff4440912991dc44162" style="min-width: 30px; min-height: 30px; width: 960px; height: 334px; left: 0px; top: 253px;"><div class="sl-block-content notranslate" data-highlight-theme="github-gist" data-code-frame="none" style="z-index: 11; font-size: 200%;"><pre class="javascript"><code data-line-numbers="">import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './App';
+
+it('renders without crashing', () =&gt; {
+  const div = document.createElement('div');
+  ReactDOM.render(&lt;App /&gt;, div);
+});</code></pre></div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 274px; left: 343px; top: 670px;" data-block-id="c98055b125deaf37a941d1952cc406ee"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 13; font-size: 35%;">
+<p><a href="https://facebook.github.io/create-react-app/docs/running-tests" target="_blank"><span style="font-size:1.0em">Running Tests - React Docs</span></a></p>
+</div></div></section><section data-id="d6b54528c9ee8a9a8c07555758c9b2f1"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 92px; height: auto;" data-block-id="9c824fde496c7023c0581a57de187cb6"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10;">
+<h1>Shallow Rendering</h1>
+</div></div>
+<div class="sl-block" data-block-type="code" style="width: 960px; height: 306px; left: 0px; top: 267px;" data-block-id="04de531fa07ff72e7ddf8f8a4b9fc87e"><div class="sl-block-content notranslate" data-highlight-theme="github-gist" data-code-frame="none" style="z-index: 11; font-size: 200%;"><pre class="javascript"><code data-line-numbers="">import React from 'react';
+import { shallow } from 'enzyme';
+import App from './App';
+
+it('renders without crashing', () =&gt; {
+  shallow(&lt;App /&gt;);
+});</code></pre></div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 274px; left: 343px; top: 670px;" data-block-id="f4ae6a8259c23eac9a263085e71c0723"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 13; font-size: 35%;">
+<p><a href="https://facebook.github.io/create-react-app/docs/running-tests" target="_blank"><span style="font-size:1.0em">Running Tests - React Docs</span></a></p>
+</div></div></section><section data-id="8dea6fbe6cf2df8e400a94cb9de07eb0"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 92px; height: auto;" data-block-id="057ed8704af4e03067c5841e21d865e2"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10;">
+<h1>The Problem</h1>
+</div></div>
+<div class="sl-block" data-block-type="text" data-block-id="877f2430431ccb01a5026245d32fa969" style="height: auto; min-width: 30px; min-height: 30px; width: 880px; left: 40px; top: 252px;"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
+<p><em><span style="font-size:1.2em">"With shallow rendering, I can refactor my component's implementation and my tests break. With shallow rendering, I can break my application and my tests say everything's still working."</span></em></p>
+
+<p><em><span style="font-size:1.2em">- Kent C. Dodds</span></em></p>
+</div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 960px; left: 0px; top: 611px;" data-block-id="adc2eb11e38ba25e0346f5722f6d9d45"><div class="sl-block-content fragment" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 13;" data-fragment-index="0">
+<p><a href="https://kentcdodds.com/blog/why-i-never-use-shallow-rendering" target="_blank">https://kentcdodds.com/blog/why-i-never-use-shallow-rendering</a></p>
+</div></div></section><section data-id="618c5684be46e4f7f7a26af6edf11091"><div class="sl-block" data-block-type="text" style="width: 806px; left: 80px; top: 387px; height: auto;" data-block-id="252a71d924105fba539e0c3df08194a6"><div class="sl-block-content fragment current-visible" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10;" data-fragment-index="0">
+<h2>React Testing Library 🐐</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 92px; height: auto;" data-block-id="dea39f2c8dd3383dd3ef36f63030c042"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 12;">
+<h1>The Solution</h1>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 806px; left: 80px; top: 387px; height: auto;" data-block-id="c63435071036f5f6c42d6f668e41c252"><div class="sl-block-content fragment" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 13;" data-fragment-index="1">
+<h2>Testing Library/React 🐙</h2>
+</div></div></section><section data-id="779d567060766095b26baad646f1ba42"><div class="sl-block" data-block-type="text" style="width: 493px; left: 0px; top: 204px; height: auto;" data-block-id="d3b435235ccedfe4177157da8f40e320"><div class="sl-block-content" data-placeholder-tag="h1" style="font-size: 130%; text-align: left; z-index: 11;" data-placeholder-text="Text">
+<h1>Guding<br>
+Principles</h1>
+</div></div>
+<div class="sl-block" data-block-type="image" data-block-id="6f3134032422d0cc3a3d6c0b1743d954" style="min-width: 4px; min-height: 4px; width: 467px; height: 700px; left: 493px; top: 0px;"><div class="sl-block-content" style="z-index: 12;"><img style="" data-natural-width="1920" data-natural-height="2880" data-lazy-loaded="" data-src="tes-15/fdb8e5f887f310e7c28c3473b6f72f0d"></div></div></section><section data-id="d1a438debdd49001c0a3a35ee020962e"><div class="sl-block" data-block-type="text" style="width: 413px; left: 29px; top: 84px; height: auto;" data-block-id="5a0d84481408eec9ef8607501b45b5a1"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="text-align: left; z-index: 10;">
+<h2>DOM Nodes</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 413px; left: 29px; top: 158px; height: auto;" data-block-id="817f2b6191832d60b9d85f337c0b495c"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nec metus justo. Aliquam erat volutpat." style="z-index: 12; text-align: left;">
+<p><span>If it relates to rendering components, it should deal with DOM Nodes over rendered component instances.</span></p>
+</div></div>
+<div class="sl-block" data-block-type="image" style="width: 467px; height: 700px; left: 493px; top: 0px; min-width: 4px; min-height: 4px;" data-block-id="e40a4c677cafa313cbbf1e356505ca63"><div class="sl-block-content" style="z-index: 11;"><img style="" data-natural-width="1920" data-natural-height="2880" data-lazy-loaded="" data-src="tes-15/1d35415daa02d3231f1d5d86a6c00317"></div></div></section><section data-id="3799a0134c734d4120984e653236ec69"><div class="sl-block" data-block-type="text" style="width: 480px; left: 507px; top: 66px; height: auto;" data-block-id="ea5c5a4bdfd7107acf5f24d18ed1a91d"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="text-align: left; z-index: 10;">
+<h2>Test Like a User</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 413px; left: 507px; top: 140px; height: auto;" data-block-id="93b50ab8608637151ebb2861e06dc105"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nec metus justo. Aliquam erat volutpat." style="z-index: 12; text-align: left;">
+<p><span style="color:rgb(36, 41, 46)">It should be generally useful for testing the application components in the way the user would use it.</span></p>
+</div></div>
+<div class="sl-block" data-block-type="image" style="width: 467px; height: 700px; left: 0px; top: 0px; min-width: 4px; min-height: 4px;" data-block-id="c22feeb6cb0db7139a8cbd77c903b4d2"><div class="sl-block-content" style="z-index: 11;"><img style="" data-natural-width="1920" data-natural-height="2880" data-lazy-loaded="" data-src="tes-15/2b3f21a11b2ab973cd11c1cb9df0868b"></div></div></section><section data-id="dd5cbe700725614729cc7494ad223df5"><div class="sl-block" data-block-type="text" style="width: 413px; left: 29px; top: 84px; height: auto;" data-block-id="336310f7b57ab9bed47052c6826e4c1f"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="text-align: left; z-index: 10;">
+<h2>Simple APIs</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 413px; left: 29px; top: 158px; height: auto;" data-block-id="311736758e291823731157014e8f0399"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nec metus justo. Aliquam erat volutpat." style="z-index: 12; text-align: left;">
+<p>Utility implementations and APIs should be simple and flexible.</p>
+</div></div>
+<div class="sl-block" data-block-type="image" style="width: 467px; height: 700px; left: 493px; top: 0px; min-width: 4px; min-height: 4px;" data-block-id="e3ecd7c88745ba489b9f4386f62495a4"><div class="sl-block-content" style="z-index: 11;"><img style="" data-natural-width="1920" data-natural-height="2880" data-lazy-loaded="" data-src="tes-15/1e6622677448e6964a1c6303899bd6d3"></div></div></section><section data-id="b70a7c217463c221a77958ad4dbf16b4"><div class="sl-block" data-block-type="code" data-block-id="954c14e9ba2732975fae7f819bf6a46d" style="min-width: 30px; min-height: 30px; width: 909px; height: 65px; left: 26px; top: 318px;"><div class="sl-block-content notranslate" data-highlight-theme="github-gist" data-code-frame="none" style="z-index: 12; font-size: 200%;"><pre class="bash"><code>npm install --save-dev @testing-library/react</code></pre></div></div></section><section data-id="70e1546138e21db8b09bd24773cb635f"><div class="sl-block" data-block-type="text" style="width: 378px; left: 51px; top: 287px; height: auto;" data-block-id="d006528dc8cb4d558a5ec9719664ab26"><div class="sl-block-content" data-placeholder-tag="h1" style="font-size: 130%; text-align: left; z-index: 10;" data-placeholder-text="Text">
+<h1>Utilities</h1>
+</div></div>
+<div class="sl-block" data-block-type="image" style="width: 525px; height: 700px; left: 464px; top: 0px; min-width: 4px; min-height: 4px;" data-block-id="b31dd8662b24daaf123be025272c1a01"><div class="sl-block-content" style="z-index: 11;"><img style="" data-natural-width="1920" data-natural-height="2560" data-lazy-loaded="" data-src="tes-15/a41913e5bc4c2a8f78951b6f63fad1ed"></div></div></section><section data-id="bd869db0c998a02aa5e2ddae74ef4153"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 92px; height: auto;" data-block-id="7c5b4f51770a531718e0214e235b56c2"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10;">
+<h1>Render</h1>
+</div></div>
+<div class="sl-block" data-block-type="code" data-block-id="17dc91a7d79ae34c2ca0c0f87f86ae6f" style="min-width: 30px; min-height: 30px; width: 960px; height: 143px; left: 0px; top: 349px;"><div class="sl-block-content notranslate" style="z-index: 11; font-size: 200%;" data-highlight-theme="github-gist"><pre><code>import { render } from '@testing-library/react';
+
+render(&lt;div /&gt;);</code></pre></div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 274px; left: 343px; top: 670px;" data-block-id="71c140749af4a2061eee5525fc12a958"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 13; font-size: 35%;">
+<p><a href="https://testing-library.com/docs/intro" target="_blank"><span style="font-size:1.0em">Testing Library</span></a></p>
+</div></div></section><section data-id="340710b0380ff3717ab6a3ccb7a9cfcd"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 70px; height: auto;" data-block-id="6d7f5a3cdf69056fb948b9c2bb5a7d29"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10;">
+<h1>Render + Cleanup</h1>
+</div></div>
+<div class="sl-block" data-block-type="code" style="width: 960px; height: 422px; left: 0px; top: 210px;" data-block-id="9053cfd916732c4c69b888669d942fa7"><div class="sl-block-content notranslate" style="z-index: 11; font-size: 168%;" data-highlight-theme="github-gist"><pre><code>import { render, cleanup } from '@testing-library/react';
+import 'jest-dom/extend-expect';
+
+afterEach(cleanup);
+
+test('renders a message', () =&gt; {
+  const { container, getByText } = render(&lt;Greeting /&gt;);
+  expect(getByText('Hello, world!')).toBeInTheDocument();
+  expect(container.firstChild).toMatchInlineSnapshot(`
+    &lt;h1&gt;Hello, World!&lt;/h1&gt;
+  `);
+});</code></pre></div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 274px; left: 343px; top: 670px;" data-block-id="50c1915498438089f757cd073a8fd862"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 13; font-size: 35%;">
+<p><a href="https://testing-library.com/docs/intro" target="_blank"><span style="font-size:1.0em">Testing Library</span></a></p>
+</div></div></section><section data-id="0dcda40fc51c045afbc893306d05595b"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 70px; height: auto;" data-block-id="395d93abb4ed7e6e54a0f2d67da3afd9"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10;">
+<h1>Render + Cleanup</h1>
+</div></div>
+<div class="sl-block" data-block-type="code" style="width: 960px; height: 296px; left: 0px; top: 272px;" data-block-id="5c4f732fe0881e9702e934ed2b77bd71"><div class="sl-block-content notranslate" style="z-index: 11; font-size: 168%;" data-highlight-theme="github-gist"><pre class="javascript"><code>// jest.config.js
+module.exports = {
+  setupFilesAfterEnv: [
+    '@testing-library/react/cleanup-after-each',
+    // ... other setup files ...
+  ],
+  // ... other options ...
+}</code></pre></div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 274px; left: 343px; top: 670px;" data-block-id="9de80329ce981a1a79e33ed033f864d7"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 13; font-size: 35%;">
+<p><a href="https://testing-library.com/docs/intro" target="_blank"><span style="font-size:1.0em">Testing Library</span></a></p>
+</div></div></section><section data-id="e3829f707f33afed5de8e67c9be5b647"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 70px; height: auto;" data-block-id="77ed14fea1928de3a0f62b9081679b5d"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10;">
+<h1>Queries</h1>
+</div></div>
+<div class="sl-block" data-block-type="table" data-block-id="974448ac93913befc60fb44a5c7e2b70" style="height: auto; min-width: 120px; min-height: 30px; width: 800px; left: 80px; top: 245px;"><div class="sl-block-content" style="z-index: 11; text-align: center;" data-table-cols="5" data-table-rows="7"><table><tbody>
+<tr>
+<th style="width: 181px;"></th>
+<th style="width: 158px;">No Match</th>
+<th>1 Match</th>
+<th>1+ Match</th>
+<th>Await?</th>
+</tr>
+<tr>
+<td style="width: 181px;"><strong>getBy</strong></td>
+<td style="width: 158px;">throw</td>
+<td>return</td>
+<td>throw</td>
+<td>No</td>
+</tr>
+<tr>
+<td style="width: 181px;"><strong>findBy</strong></td>
+<td style="width: 158px;">throw</td>
+<td>return</td>
+<td>throw</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td style="width: 181px;"><strong>queryBy</strong></td>
+<td style="width: 158px;">null</td>
+<td>return</td>
+<td>throw</td>
+<td>No</td>
+</tr>
+<tr>
+<td style="width: 181px;"><strong>getAllBy</strong></td>
+<td style="width: 158px;">throw</td>
+<td>array</td>
+<td>array</td>
+<td>No</td>
+</tr>
+<tr>
+<td style="width: 181px;"><strong>findAllBy</strong></td>
+<td style="width: 158px;">throw</td>
+<td>array</td>
+<td>array</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td style="width: 181px;"><strong>queryAllBy</strong></td>
+<td style="width: 158px;">[]</td>
+<td>array</td>
+<td>array</td>
+<td>No</td>
+</tr>
+</tbody></table></div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 274px; left: 343px; top: 670px;" data-block-id="3ab7a519f17ed7f4b3bef29ae704572d"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 13; font-size: 35%;">
+<p><a href="https://testing-library.com/docs/intro" target="_blank"><span style="font-size:1.0em">Testing Library</span></a></p>
+</div></div></section><section data-id="0023d3a7aa2feac98bc25a713fe0c59a"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 70px; height: auto;" data-block-id="e8b63fdc8c95df193b0254b38709ed2f"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10;">
+<h1>Queries</h1>
+</div></div>
+<div class="sl-block" data-block-type="text" data-block-id="3ff7a3b0b1c07c6d8215347cab87e4fe" style="height: auto; min-width: 30px; min-height: 30px; width: 960px; left: 0px; top: 193px;"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11; line-height: 1.755;" data-has-line-height="">
+<ul>
+	<li class="fragment" data-fragment-index="0">ByLabelText</li>
+	<li class="fragment" data-fragment-index="1">ByPlaceholderText</li>
+	<li class="fragment" data-fragment-index="2">ByText</li>
+	<li class="fragment" data-fragment-index="3">ByDisplayValue</li>
+	<li class="fragment" data-fragment-index="4">ByAltText</li>
+	<li class="fragment" data-fragment-index="5">ByTitle</li>
+	<li class="fragment" data-fragment-index="6">ByRole</li>
+	<li class="fragment" data-fragment-index="7">ByTestId</li>
+</ul>
+</div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 274px; left: 343px; top: 670px;" data-block-id="6266f2f5d91bc44b5f84156edb62782b"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12; font-size: 35%;">
+<p><a href="https://testing-library.com/docs/intro" target="_blank"><span style="font-size:1.0em">Testing Library</span></a></p>
+</div></div></section><section data-id="58a12b94766e06cdce7277c3851268e9"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 70px; height: auto;" data-block-id="30b517836502b5075d860e6d822d6fcb"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10;">
+<h1>Events</h1>
+</div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 960px; left: 0px; top: 335px;" data-block-id="bebaccc64797596a1945df438ed79178"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11; line-height: 1.755;" data-has-line-height="">
+<ul>
+	<li class="fragment" data-fragment-index="0">
+<strong><span>fireEvent</span></strong> fireEvent(node, event)</li>
+	<li class="fragment" data-fragment-index="1">
+<strong><span>fireEvent.*</span></strong>
+	<ul>
+		<li>
+<span>click</span> fireEvent.click(node)</li>
+	</ul>
+	</li>
+</ul>
+</div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 274px; left: 343px; top: 670px;" data-block-id="c853ebe66d0a12fef869c19509f48336"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 13; font-size: 35%;">
+<p><a href="https://testing-library.com/docs/intro" target="_blank"><span style="font-size:1.0em">Testing Library</span></a></p>
+</div></div></section><section data-id="b80b3e87e2a8f6327b2982ab1cc83bed"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 43px; height: auto;" data-block-id="1a0a6cb370bc3c00ca41916b6ff6ed0f"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10;">
+<h1>Async</h1>
+</div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 960px; left: 0px; top: 258px;" data-block-id="bea9677f6140b1a5f15e57e9a189e205"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11; line-height: 1.755;" data-has-line-height="">
+<ul>
+	<li class="fragment" data-fragment-index="0">wait</li>
+	<li class="fragment" data-fragment-index="1">waitForElement</li>
+	<li class="fragment" data-fragment-index="2">waitForDomChange</li>
+	<li class="fragment" data-fragment-index="3">waitForElementToBeRemoved</li>
+</ul>
+</div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 274px; left: 343px; top: 670px;" data-block-id="7fa2013de114b6d9781f281e177f29a0"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 13; font-size: 35%;">
+<p><a href="https://testing-library.com/docs/intro" target="_blank"><span style="font-size:1.0em">Testing Library</span></a></p>
+</div></div></section><section data-id="a402dbf424a36164ab996efb4082d88c"><div class="sl-block" data-block-type="code" data-block-id="e3ff6205031cf7af398e587f9667bf77" style="min-width: 30px; min-height: 30px; width: 960px; height: 457px; left: 0px; top: 122px;"><div class="sl-block-content notranslate" data-highlight-theme="github-gist" data-code-frame="none" style="z-index: 10; font-size: 171%;"><pre class="javascript"><code data-line-numbers="">import { render, fireEvent } 
+  from '@testing-library/react';
+
+test('loads items eventually', async () =&gt; {
+  const { getByText, findByText } = render(&lt;Page /&gt;);
+
+  // Click button
+  fireEvent.click(getByText('Load'));
+
+  // Wait for page to update with query text
+  const items = await findByText(/Item #[0-9]: /);
+  expect(items).toHaveLength(10);
+});</code></pre></div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 274px; left: 343px; top: 670px;" data-block-id="dfdc13819538458f3ba80b3ae887bc87"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12; font-size: 35%;">
+<p><a href="https://testing-library.com/docs/intro" target="_blank"><span style="font-size:1.0em">Testing Library</span></a></p>
+</div></div></section><section data-id="3e4b49e0ee50162b2fbc74dd9cd10f06"><div class="sl-block" data-block-type="code" style="width: 960px; height: 700px; left: 0px; top: 0px;" data-block-id="470c94dc9be65ae515ab554a93ab996a"><div class="sl-block-content notranslate" data-highlight-theme="github-gist" data-code-frame="none" style="z-index: 10; font-size: 108%;"><pre class="javascript"><code data-line-numbers="">// __tests__/fetch.test.js
+import React from 'react'
+import {
+  render,
+  fireEvent,
+  cleanup,
+  waitForElement,
+} from '@testing-library/react'
+import 'jest-dom/extend-expect'
+import axiosMock from 'axios'
+import Fetch from '../fetch'
+
+afterEach(cleanup)
+
+test('loads and displays greeting', async () =&gt; {
+  const url = '/greeting'
+  const { getByText, getByTestId } = render(&lt;Fetch url={url} /&gt;)
+
+  axiosMock.get.mockResolvedValueOnce({
+    data: { greeting: 'hello there' },
+  })
+
+  fireEvent.click(getByText('Load Greeting'))
+
+  const greetingTextNode = await waitForElement(() =&gt;
+    getByTestId('greeting-text')
+  )
+
+  expect(axiosMock.get).toHaveBeenCalledTimes(1)
+  expect(axiosMock.get).toHaveBeenCalledWith(url)
+  expect(getByTestId('greeting-text')).toHaveTextContent('hello there')
+  expect(getByTestId('ok-button')).toHaveAttribute('disabled')
+})</code></pre></div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 274px; left: 686px; top: 670px;" data-block-id="c8d257934e51d4be0cce49d78d386972"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12; font-size: 35%;">
+<p><a href="https://testing-library.com/docs/intro" target="_blank"><span style="font-size:1.0em">Testing Library</span></a></p>
+</div></div></section><section data-id="a0cab7c70ad24f81f6427f283f4ad719"><div class="sl-block" data-block-type="code" style="width: 960px; height: 700px; left: 0px; top: 0px;" data-block-id="fd669d54f1da8eaf944883466a11aaab"><div class="sl-block-content notranslate" data-highlight-theme="github-gist" data-code-frame="none" style="z-index: 10; font-size: 175%;"><pre class="javascript"><code data-line-numbers="">// import dependencies
+import React from 'react';
+
+// import react-testing methods
+import {
+  render,
+  fireEvent,
+  cleanup,
+  waitForElement,
+} from '@testing-library/react';
+
+// add custom jest matchers from jest-dom
+import 'jest-dom/extend-expect';
+
+// the axios mock is in __mocks__/
+// see https://jestjs.io/docs/en/manual-mocks
+import axiosMock from 'axios';
+
+// the component to test
+import Fetch from '../fetch';</code></pre></div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 274px; left: 686px; top: 670px;" data-block-id="1889fc4851fe1fdb77b05fa76817d8c5"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12; font-size: 35%;">
+<p><a href="https://testing-library.com/docs/intro" target="_blank"><span style="font-size:1.0em">Testing Library</span></a></p>
+</div></div></section><section data-id="cc22d6003396d6a37fa01bdc46ba153d"><div class="sl-block" data-block-type="code" style="width: 960px; height: 384px; left: 0px; top: 158px;" data-block-id="bbdfb9b189be96489b08dba239270b7e"><div class="sl-block-content notranslate" data-highlight-theme="github-gist" data-code-frame="none" style="z-index: 10; font-size: 180%;"><pre class="javascript"><code data-line-numbers="">// automatically unmount and cleanup DOM after 
+// the test is finished.
+
+afterEach(cleanup);
+
+test('loads and displays greeting', async () =&gt; {
+  // Arrange
+  // Act
+  // Assert
+});</code></pre></div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 274px; left: 343px; top: 670px;" data-block-id="cf271444325c32e3777c9216d3bbe1de"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12; font-size: 35%;">
+<p><a href="https://testing-library.com/docs/intro" target="_blank"><span style="font-size:1.0em">Testing Library</span></a></p>
+</div></div></section><section data-id="49bb1b28c7220641b92bcfc2a33f030d"><div class="sl-block" data-block-type="code" style="width: 960px; height: 175px; left: 0px; top: 263px;" data-block-id="72178eef77d038a096b51467187358b0"><div class="sl-block-content notranslate" data-highlight-theme="github-gist" data-code-frame="none" style="z-index: 10; font-size: 200%;"><pre class="javascript"><code data-line-numbers="">const url = '/greeting';
+const { getByText, getByTestId } = render(
+  &lt;Fetch url={url} /&gt;
+);</code></pre></div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 274px; left: 343px; top: 670px;" data-block-id="a9c801546d2845c2a44c28a499df78e0"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12; font-size: 35%;">
+<p><a href="https://testing-library.com/docs/intro" target="_blank"><span style="font-size:1.0em">Testing Library</span></a></p>
+</div></div></section><section data-id="82b75cdc9e9ef98bc5a295f18a16d3dc"><div class="sl-block" data-block-type="code" style="width: 960px; height: 575px; left: 0px; top: 63px;" data-block-id="badf93ce080b46165c2de4730934fb69"><div class="sl-block-content notranslate" data-highlight-theme="github-gist" data-code-frame="none" style="z-index: 10; font-size: 177%;"><pre class="javascript"><code data-line-numbers="">axiosMock.get.mockResolvedValueOnce({
+  data: { greeting: 'hello there' },
+});
+
+fireEvent.click(getByText('Load Greeting'));
+
+// Wait until the mocked `get` request promise 
+// resolves and the component calls setState 
+// and re-renders. `waitForElement` waits until 
+// the callback doesn't throw an error.
+
+const greetingTextNode = await waitForElement(() =&gt;
+  // getByTestId throws an error if it cannot 
+  // find an element
+  getByTestId('greeting-text');
+);</code></pre></div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 274px; left: 343px; top: 670px;" data-block-id="80ddac4ac360d3f5c6e568bf1b4a883e"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12; font-size: 35%;">
+<p><a href="https://testing-library.com/docs/intro" target="_blank"><span style="font-size:1.0em">Testing Library</span></a></p>
+</div></div></section><section data-id="52911b6886a252cbf82928044278615f"><div class="sl-block" data-block-type="code" style="width: 960px; height: 384px; left: 0px; top: 158px;" data-block-id="b84a0c9904807991d0642c1335733477"><div class="sl-block-content notranslate" data-highlight-theme="github-gist" data-code-frame="none" style="z-index: 10; font-size: 192%;"><pre class="javascript"><code data-line-numbers="">expect(axiosMock.get).toHaveBeenCalledTimes(1);
+expect(axiosMock.get).toHaveBeenCalledWith(url);
+expect(getByTestId('greeting-text'))
+  .toHaveTextContent('hello there');
+expect(getByTestId('ok-button'))
+  .toHaveAttribute('disabled');
+
+// snapshots work great with regular DOM nodes!
+expect(container.firstChild).toMatchSnapshot();
+</code></pre></div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 274px; left: 343px; top: 670px;" data-block-id="6e287f01ed1169140c6c61a0162e8746"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12; font-size: 35%;">
+<p><a href="https://testing-library.com/docs/intro" target="_blank"><span style="font-size:1.0em">Testing Library</span></a></p>
+</div></div></section><section data-id="3a63e5a193ab1c5627f876b968279925"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 210px; height: auto;" data-block-id="5ae4b7002a0fc0d5d237a3746c617199"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10;">
+<h1>jest-dom 🦉</h1>
+</div></div>
+<div class="sl-block" data-block-type="text" data-block-id="ccaf1030e024685657527eb3ff754c42" style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: 180px; top: 420px;"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
+<h3>Custom Jest Matches</h3>
+</div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 274px; left: 343px; top: 670px;" data-block-id="4b1654dd8d94fe95581f33dc808ce075"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 13; font-size: 35%;">
+<p><a href="https://github.com/testing-library/jest-dom" target="_blank">jest-dom repo</a></p>
+</div></div></section><section data-id="79fa184b967576ec6d1115b05c200d98" data-preload="" data-background-iframe="https://react-testing-posts-app.firebaseapp.com/posts"></section><section data-id="75f8ebc49f9dfad2148d15628fdad985">
+<div class="sl-block" data-block-type="code" data-block-id="1003dc595f8dc0db4e0a8b89c31f3405" style="min-width: 30px; min-height: 30px; width: 960px; height: 420px; left: 0px; top: 140px;"><div class="sl-block-content notranslate" data-highlight-theme="github-gist" data-code-frame="none" style="z-index: 12; font-size: 138%;"><pre class="xml"><code data-line-numbers="|1|2|8|12">{data.posts.map((post, index) =&gt; (
+    &lt;Grid item lg key={post.id}&gt;
+      &lt;Card className={classes.card}&gt;
+        &lt;CardActionArea&gt;
+          &lt;CardMedia
+            className={classes.media}
+            image={getSrc(post.id)}
+            title={post.author}
+          /&gt;
+          &lt;CardContent&gt;
+            &lt;Typography gutterBottom variant="h5" component="h2"&gt;
+              {post.author}
+            &lt;/Typography&gt;
+...
+</code></pre></div></div></section><section data-id="4837ba809bfcebe4ab5d604e6ba8f904">
+<div class="sl-block" data-block-type="code" style="width: 960px; height: 632px; left: 0px; top: 34px;" data-block-id="fcfe867bf6ec616095d9d443fe7a288f"><div class="sl-block-content notranslate" data-highlight-theme="github-gist" data-code-frame="none" style="z-index: 11; font-size: 200%;"><pre class="javascript"><code data-line-numbers="|5|8|10-14">import { 
+ render, 
+ waitForElement
+} from "@testing-library/react";
+import axiosMock from "axios";
+import Posts from "./Posts";
+
+jest.mock("axios");
+
+test("Posts Component", async () =&gt; {
+  // Arrange
+  // Act
+  // Assert
+});</code></pre></div></div></section><section data-id="f4d3790e601816ac8f2ea65f31d73023">
+<div class="sl-block" data-block-type="code" style="width: 960px; height: 613px; left: 0px; top: 44px;" data-block-id="118d63b0e92e0124b157fe39393b7edc"><div class="sl-block-content notranslate" data-highlight-theme="github-gist" data-code-frame="none" style="z-index: 11; font-size: 134%;"><pre class="javascript"><code data-line-numbers="|1|4|9|14|19">  // Arrange
+  const returnData = [
+    {
+      author: "John Doe",
+      author_url: "https://unsplash.com/@johndoe",
+      filename: "0000_yC-Yzbqy7PY.jpeg",
+      format: "jpeg",
+      height: 3744,
+      id: 0,
+      post_url: "https://unsplash.com/photos/yC-Yzbqy7PY",
+      width: 5616
+    },
+    {
+      author: "Jane Doe",
+      author_url: "https://unsplash.com/@janedoe",
+      filename: "0100_pwaaqfoMibI.jpeg",
+      format: "jpeg",
+      height: 1656,
+      id: 1,
+      post_url: "https://unsplash.com/photos/pwaaqfoMibI",
+      width: 2500
+    }
+  ];</code></pre></div></div></section><section data-id="9e61ce4895a538a65fb5d8aa3ee449a2">
+<div class="sl-block" data-block-type="code" style="width: 960px; height: 571px; left: 0px; top: 65px;" data-block-id="4551edfc1aebba1b2160e41628eac723"><div class="sl-block-content notranslate" data-highlight-theme="github-gist" data-code-frame="none" style="z-index: 10; font-size: 180%;"><pre class="javascript"><code data-line-numbers="|2-4|6-9|11-16">// Act
+axiosMock.get.mockResolvedValueOnce({ 
+ data: returnData 
+});
+
+const {
+ getByTitle, 
+ container
+} = render(&lt;Posts/&gt;);
+
+const [
+  cardNode1, 
+  cardNode2
+] = await waitForElement(() =&gt;
+  [getByTitle("John Doe"), getByTitle("Jane Doe")]
+);</code></pre></div></div></section><section data-id="0542a99038ee99064e710c99c585c043">
+<div class="sl-block" data-block-type="code" style="width: 960px; height: 440px; left: 0px; top: 200px;" data-block-id="ad68a78df1bbefdec25db874185fe7e5"><div class="sl-block-content notranslate" data-highlight-theme="github-gist" data-code-frame="none" style="z-index: 11; font-size: 180%;"><pre class="javascript"><code data-line-numbers="|2-4|6-9|11-12">// Act
+axiosMock.get.mockResolvedValueOnce({ 
+ data: returnData 
+});
+
+const {
+ findByTitle, 
+ container
+} = render(&lt;Posts/&gt;);
+
+const cardNode1 = await findByTitle("John Doe");
+const cardNode2 = await findByTitle("Jane Doe");</code></pre></div></div>
+<div class="sl-block" data-block-type="text" style="width: 806px; left: 74px; top: 32px; height: auto;" data-block-id="07c01ae6b001222dc7af5d850226acfe"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 12;">
+<h1>Using findBy</h1>
+</div></div></section><section data-id="1fdb5cde88fc1e4869e0872929221efc">
+<div class="sl-block" data-block-type="code" style="width: 960px; height: 487px; left: 0px; top: 107px;" data-block-id="88dd0d8d92d4e21bff66b5d133977db7"><div class="sl-block-content notranslate" data-highlight-theme="github-gist" data-code-frame="none" style="z-index: 11; font-size: 133%;"><pre class="javascript"><code data-line-numbers="|2-3|4-5|7-10|11-14|17">// Assert
+expect(axiosMock.get)
+ .toHaveBeenCalledTimes(1);
+expect(axiosMock.get)
+ .toHaveBeenCalledWith("https://picsum.photos/list");
+  
+expect(cardNode1)
+  .toHaveStyle(
+   "backgroundImage: 'url(\"https://picsum.photos/250/375?image=0\")'"
+  );
+expect(cardNode2)
+  .toHaveStyle(
+   "backgroundImage: 'url(\"https://picsum.photos/250/375?image=1\")'"
+  );
+
+// snapshots work great with regular DOM nodes!
+expect(container.firstChild).toMatchSnapshot();</code></pre></div></div></section><section data-id="b7d2ff9076cc14d5b30bbcedd72b0abc"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 43px; height: auto;" data-block-id="5ebd0d40d28e0c1b53667a5f963de46f"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10;">
+<h1>It Passed!!!</h1>
+</div></div>
+<div class="sl-block" data-block-type="code" style="width: 960px; height: 512px; left: 0px; top: 188px;" data-block-id="e4efbe448e069ee9d201fb9f31815d84"><div class="sl-block-content notranslate" data-highlight-theme="obsidian" data-code-frame="none" style="z-index: 11; font-size: 200%;"><pre class="none"><code data-line-numbers="|3|6,7,9"> PASS  src/components/Home.test.js
+ PASS  src/services/PostsApi.test.js
+ PASS  src/components/Posts.test.js
+ PASS  src/App.test.js
+
+Test Suites: 4 passed, 4 total
+Tests:       4 passed, 4 total
+Snapshots:   1 passed, 1 total
+Time:        2.262s
+Ran all test suites.
+
+Watch Usage: Press w to show more.</code></pre></div></div></section><section data-id="98e08dc78afcb76a3d3b3fcc51f58a18"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 70px; height: auto;" data-block-id="a1b5945e354c60305d19e96a5ad030fe"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10;">
+<h1>Batteries Included</h1>
+</div></div>
+<div class="sl-block" data-block-type="image" style="width: 240px; height: 240px; left: 77px; top: 300px; min-width: 4px; min-height: 4px;" data-block-id="eebef3c97be8196ad73bbc6424e312a7"><div class="sl-block-content" style="z-index: 11;"><img data-natural-width="1024" data-natural-height="1024" style="" data-lazy-loaded="" data-src="tes-15/7723ef16ff2aabe8166bc80638d934a9.png"></div></div>
+<div class="sl-block" data-block-type="image" style="width: 339px; height: 240px; left: 311px; top: 300px; min-width: 4px; min-height: 4px;" data-block-id="492151864505a598b4ff1d0f2008ad09"><div class="sl-block-content" style="z-index: 12;"><img data-natural-width="1024" data-natural-height="724" style="" data-lazy-loaded="" data-src="tes-15/f3d91fd660edf0cd588fa620cf1b1448.png"></div></div>
+<div class="sl-block" data-block-type="image" style="width: 217px; height: 188px; left: 666px; top: 326px; min-width: 4px; min-height: 4px;" data-block-id="a4b15ae99c3b575bde4fff14daa93474"><div class="sl-block-content" style="z-index: 13;"><img data-natural-width="262" data-natural-height="227" style="" data-lazy-loaded="" data-src="tes-15/4358efb89552ff43b283776cda975a1a.svg"></div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 227px; left: 80px; top: 560px;" data-block-id="7e6d704b7c1e7b8f700e445a333ff17b"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 14;" data-has-custom-html="">
+<p><span style="font-size:0.3em">By Google [CC BY 4.0], via Wikimedia Commons</span></p>
+</div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 300px; left: 326px; top: 560px;" data-block-id="4b7aaea4782e17c559102f7b8a5d1e25"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 15;" data-has-custom-html="">
+<p><span style="font-size:0.3em">Facebook [Public domain or CC BY-SA 1.0], via Wikimedia Commons</span></p>
+</div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 231px; left: 655px; top: 560px;" data-block-id="817021f7441a379198f98c7e9c64f7ee"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 16;" data-has-custom-html="">
+<p><span style="font-size:0.3em">By Evan You [CC BY 4.0], via Wikimedia Commons</span></p>
+</div></div>
+</section><section data-id="246ad89a6018e01ce3bb4a8d72896319"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 266px; height: auto;" data-block-id="3bbadee69cae98c3e09d56b661f36244"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10;">
+<h1>Biggest benefit of testing?</h1>
+</div></div></section><section data-id="ba278afecf0ede84fce3069f2f07e800"><div class="sl-block" data-block-type="image" data-block-id="d7296cee2b6aa1b7dd14beedb8ad40c4" style="min-width: 4px; min-height: 4px; width: 960px; height: 653px; left: 0px; top: 24px;"><div class="sl-block-content" style="z-index: 11;"><img data-natural-width="1920" data-natural-height="1305" style="" data-lazy-loaded="" data-src="tes-15/e18329088e2c4ad217082897fe963f83.jpg"></div></div></section><section data-id="ebbc6bddccb123ae8eafb0d641578141"><div class="sl-block" data-block-type="text" style="width: 841px; left: 60px; top: 156px; height: auto;" data-block-id="661656b9fa10e113adddad05f0abf703"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Subtitle" style="z-index: 11;">
+<h1><em><span style="text-align:start">"Quality means doing it right even when no one is looking."</span></em></h1>
+
+<h1>
+<em><span style="text-align:start">-</span></em> Henry Ford</h1>
+</div></div></section><section data-id="8e32c68386062e6ac1d7981aeb3131ce"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 70px; height: auto;" data-block-id="82813dee3ce43a3e24ba82ad0654bc52"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10;">
+<h1>Questions?</h1>
+</div></div>
+<div class="sl-block" data-block-type="image" style="width: 328px; height: 436px; left: 316px; top: 210px; min-width: 4px; min-height: 4px;" data-block-id="233c80c70f181f6dc4f6019ff266e4b4"><div class="sl-block-content fragment" style="z-index: 11;" data-fragment-index="0"><img style="" data-natural-width="328" data-natural-height="436" data-lazy-loaded="" data-src="tes-15/6772c496533b0bad6afb13857b0839c8.gif"></div></div>
+<div class="sl-block" data-block-type="text" style="width: 386px; left: 574px; top: 650px; height: auto;" data-block-id="117ad7bc72590d220b09947e88f6de03"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Subtitle" style="z-index: 13;">
+<h3>@avindrafernando</h3>
+</div></div></section>
+			</div>
+		</div>
+
+		<script>
+			var SLConfig = {"deck": {"id":1552284,"slug":"tes-15","title":"Testing Your React Components - KCDC 2019","description":"","width":960,"height":700,"visibility":"self","published_at":null,"sanitize_messages":null,"thumbnail_url":"https://s3.amazonaws.com/media-p.slid.es/thumbnails/36442ff5c4f6388d2d12afa614fab6b5/thumb.jpg?1563051613","view_count":0,"user":{"id":887386,"username":"avindrafernando","name":"Avindra Fernando","description":null,"thumbnail_url":"https://lh6.googleusercontent.com/-M3NEgrSsLQE/AAAAAAAAAAI/AAAAAAAAAng/gI6HoGNo1s0/photo.jpg","paid":true,"pro":false,"lite":true,"team_id":null,"settings":{"id":1364586,"present_controls":true,"present_upsizing":true,"present_pointer":false,"present_notes":true,"default_deck_tag_id":null}},"background_transition":"slide","transition":"slide","theme_id":null,"theme_font":"montserrat","theme_color":"white-blue","auto_slide_interval":0,"comments_enabled":true,"forking_enabled":false,"rolling_links":false,"center":false,"shuffle":null,"should_loop":false,"share_notes":null,"slide_number":null,"slide_count":74,"rtl":false,"version":2,"collaborative":false,"deck_user_editor_limit":1,"data_updated_at":1563426460304,"font_typekit":null,"font_google":null,"time_limit":null,"upsizing_enabled":null,"notes":{}}};
+
+
+			// Use local fonts
+			SLConfig.fonts_url = 'lib/fonts/';
+		</script>
+
+		<script src="lib/reveal.min.js"></script>
+		<script src="lib/offline.js"></script>
+
+		<!-- Initialize the presentation -->
+		<script>
+			Reveal.initialize({
+				width: 960,
+				height: 700,
+				margin: 0.05,
+				maxScale: 1,
+
+				hash: true,
+				controls: true,
+				progress: true,
+				mouseWheel: false,
+				showNotes: false,
+				slideNumber: false,
+
+				autoSlide: 0,
+				autoSlideStoppable: true,
+
+				center: false,
+				shuffle: false,
+				loop: false,
+				rtl: false,
+
+				transition: "slide",
+				backgroundTransition: "slide",
+
+				highlight: {
+					escapeHTML: false
+				},
+
+				dependencies: [
+					{ src: 'lib/reveal-plugins/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'lib/reveal-plugins/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'lib/reveal-plugins/highlight/highlight.js' },
+					{ src: 'lib/reveal-plugins/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'lib/reveal-plugins/zoom/zoom.js', async: true }
+				]
+			});
+		</script>
+
+		
+
+	</body>
+</html>
