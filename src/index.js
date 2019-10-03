@@ -31,7 +31,7 @@ const client = new ApolloClient({
 
 cache.writeData({
   data: {
-    isGithubApiTokenSet: !!localStorage.getItem("token")
+    isAuthenticated: !!localStorage.getItem("token")
   },
 });
 

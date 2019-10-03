@@ -90,16 +90,16 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-const IS_GITHUB_API_TOKEN_SET = gql`
-  query isGithubApiTokenSet {
-    isGithubApiTokenSet @client
+const IS_AUTHENTICATED = gql`
+  query isAuthenticatedWithGithub {
+    isAuthenticated @client
   }
 `;
 
-function isGithubApiTokenSet() {
+function isAuthenticated() {
   // eslint-disable-next-line react-hooks/rules-of-hooks
-  const { data } = useQuery(IS_GITHUB_API_TOKEN_SET);
-  return data.isGithubApiTokenSet ? <StickyHeadTable /> : <Chip label="Github API Token not set." color="secondary" />;
+  const { data } = useQuery(IS_AUTHENTICATED);
+  return data.isAuthenticated ? <StickyHeadTable /> : <Chip label="Unauthorized: Github API Token not set." color="secondary" />;
 }
 
 const NavBar = () => {
@@ -203,7 +203,7 @@ const NavBar = () => {
 
         <Route exact path="/" component={Home} />
         <Route exact path="/posts" component={Posts} />
-        <Route exact path="/github-repos" component={isGithubApiTokenSet} />
+        <Route exact path="/github-repos" component={isAuthenticated} />
       </main>
     </div>
   );
